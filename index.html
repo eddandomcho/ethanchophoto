@@ -22,10 +22,10 @@
 
   <body>
     <header class="header" id="home">
-      <nav>
+      <nav id="navbar">
         <div class="nav__header">
           <div class="nav__logo">
-            <a href="#">
+            <a href="index.html">
               <img
                 src="assets/ethanchophoto-logo.png"
                 alt="Ethan Cho Photo Logo"
@@ -34,7 +34,7 @@
           </div>
 
           <div>
-            <h1 class="nav__title">Ethan Cho Photo</h1>
+            <h1 class="nav__title">ETHAN CHO PHOTO</h1>
           </div>
 
           <div class="nav__menu__btn" id="menu-btn">
@@ -42,8 +42,8 @@
           </div>
         </div>
         <ul class="nav__links" id="nav-links">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT ME</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about_me.html">ABOUT ME</a></li>
           <li><a href="photography.html">PHOTOGRAPHY</a></li>
           <li class="nav__logo">
             <a href="#">
@@ -59,16 +59,108 @@
         </ul>
       </nav>
       <div class="header__content">
-        <h1 class="main__title">Ethan Cho Photo</h1>
-        <h2 class="main__subtitle">Photography Portfolio</h2>
+        <h1 class="main__title">ETHAN CHO PHOTO</h1>
+        <h2 class="main__subtitle">PHOTOGRAPHY PORTFOLIO | 사진 포트폴리오</h2>
         <i class="ri-arrow-down-long-line"></i>
       </div>
     </header>
 
-    <script src="main.js"></script>
-
     <main>
-      <section class="website__description"></section>
+      <section class="intro">
+        <div class="intro__image">
+          <img
+            src="assets/joo-chiat.jpeg"
+            alt="Ethan Cho Photo at Joo Chiat, Singapore"
+          />
+        </div>
+        <div class="intro__content">
+          <p>I'm so happy you're here!</p>
+          <br />
+          <p>
+            I'm an amateur photographer based in Seoul, South Korea and now am
+            attending Duke University in Durham, North Carolina. As a nature
+            lover, I enjoy snapping photos of plants, animals, and natural
+            landscapes, as well as any scenery that I find beautiful in urban
+            and rural settings. Recently, I've also gotten into sports and event
+            photography. Scroll down to see some of my work!
+          </p>
+        </div>
+      </section>
+
+      <!-- <section class="me">
+        <div class="me__one">
+          <img
+            src="assets/cloud-forest.JPG"
+            alt="Ethan Cho Photo at Cloud Forest, Singapore"
+          />
+        </div>
+        <div class="me__two">
+          <img
+            src="assets/met-painting.JPG"
+            alt="Ethan Cho Photo at the Metropolitan Museum of Art, New York City"
+          />
+        </div>
+        <div class="me__three">
+          <img
+            src="assets/pokemon-center-hakata.JPG"
+            alt="Ethan Cho Photo at Pokémon Center Fukuoka, Japan"
+          />
+        </div>
+      </section> -->
+
+      <section class="portfolio__container">
+        <h2>PORTFOLIO</h2>
+        <br />
+        <div class="portfolio__grid" id = "grid-1">
+          <div class="portfolio__card" id="headshots">
+            <img
+              src="assets/headshots/bhavika-1.jpg"
+              alt="Bhavika Verma Headshot"
+            />
+            <div class="portfolio__content"">
+              <button class="btn">VIEW PORTFOLIO</button>
+            </div>
+          </div>
+          <div class="portfolio__card" id = "grad-photos">
+            <img
+              src="assets/grad-photos/jeanie-luke-1.jpeg"
+              alt="Jeanie Jia and Luke Fu Grad Photos in the Sarah P. Duke Gardens"
+            />
+            <div class="portfolio__content">
+              <button class="btn">VIEW PORTFOLIO</button>
+            </div>
+          </div>
+          <div class="portfolio__card" id = "arts">
+            <img src="assets/arts/defmo-3.jpg" alt="" />
+            <div class="portfolio__content">
+              <button class="btn">VIEW PORTFOLIO</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio__grid" id = "grid-2">
+          <div class="portfolio__card" id = "event">
+            <img src="assets/event/bow-7.jpg" alt="" />
+            <div class="portfolio__content">
+              <button class="btn">VIEW PORTFOLIO</button>
+            </div>
+          </div>
+          <div class="portfolio__card" id = "urban">
+            <img src="assets/urban/gangneung-1.JPG" alt="" />
+            <div class="portfolio__content">
+              <button class="btn">VIEW PORTFOLIO</button>
+            </div>
+          </div>
+          <div class="portfolio__card" id = "nature">
+            <img src="assets/nature/gardens-2.jpg" alt="" />
+            <div class="portfolio__content">
+              <button class="btn">VIEW PORTFOLIO</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="main.js"></script>
   </body>
 </html>
