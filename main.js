@@ -42,3 +42,12 @@ ScrollReveal().reveal(".me", {
 // ScrollReveal().reveal(".portfolio__grid", {
 //   ...scrollRevealOption,
 // });
+
+const preview = document.getElementById("headshotdex__preview");
+
+document.querySelectorAll(".tile").forEach((tile) => {
+  tile.addEventListener("click", () => {
+    preview.src = tile.dataset.image;
+    preview.alt = tile.querySelector("img").alt;
+  });
+});
