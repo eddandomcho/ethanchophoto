@@ -51,3 +51,9 @@ document.querySelectorAll(".tile").forEach((tile) => {
     preview.alt = tile.querySelector("img").alt;
   });
 });
+
+document.querySelectorAll(".gallery img").forEach((img) => {
+  img.addEventListener("click", () => {
+    img.classList.toggle("zoomed");
+  });
+});
