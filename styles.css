@@ -87,7 +87,91 @@ h2 {
 #headshots__header {
   min-height: 600px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("assets/urban/nyc-1.jpg");
+    url("assets/urban/nyc/nyc-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 125px;
+}
+
+#nature__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/nature/gardens-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 125px;
+}
+
+#urban__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/urban/nyc/nyc-9.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 125px;
+}
+
+#urban__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/urban/nyc/nyc-9.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 125px;
+}
+
+#grad-photos__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/urban/fukuoka/fukuoka-21.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 125px;
+}
+
+#arts__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/arts/oshow-5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 125px;
+}
+
+#event__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/event/bow-2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -101,7 +185,7 @@ h2 {
 #photography {
   min-height: 600px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("assets/street/nyc-2.JPG");
+    url("assets/street/nyc/nyc-2.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -356,6 +440,18 @@ nav.hide {
   grid-template-columns: repeat(3, 180px);
   gap: 30px;
   padding: 40px;
+}
+
+.photo-grid img {
+  cursor: zoom-in;
+}
+
+#gallery__photo__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 670px);
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
 }
 
 .tile {
