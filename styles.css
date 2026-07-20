@@ -1,3 +1,7 @@
+/* ==========================================================================
+   1. ROOT VARIABLES & RESET
+   ========================================================================== */
+
 :root {
   --text-dark: #171717;
   --text-light: #525252;
@@ -12,6 +16,64 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/* ==========================================================================
+     2. BASE / GLOBAL ELEMENTS
+     ========================================================================== */
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope";
+}
+
+h2 {
+  font-size: 40px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--text-dark);
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.button {
+  background-color: var(--text-dark);
+  border: none;
+  color: white;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+     3. SECTION LAYOUT / TYPOGRAPHY
+     ========================================================================== */
 
 .section__container {
   max-width: var(--max-width);
@@ -34,42 +96,91 @@
   text-align: center;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--white);
+/* ==========================================================================
+     4. NAVIGATION
+     ========================================================================== */
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  top: 0;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+  z-index: 9;
+}
+
+nav.hide {
+  transform: translateY(-100%);
+}
+
+.nav__header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   background-color: var(--text-dark);
-  border-radius: 5px;
-  transition: 0.3s;
+}
+
+.nav__title {
+  font-family: Manrope;
+  color: var(--white);
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.nav__logo img {
+  width: 100px;
+  height: auto;
+  max-width: 100px;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
   cursor: pointer;
 }
 
-img {
-  display: block;
+.nav__links {
+  font-family: Manrope;
+  list-style: none;
+  position: absolute;
   width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--text-dark);
+  transform: translateY(-100%);
+  transition: 0.5s;
+  z-index: -1;
 }
 
-a {
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links .nav__logo {
+  display: none;
+}
+
+.nav__links a {
+  font-family: Manrope;
+  padding-bottom: 5px;
+  font-weight: 600;
   color: var(--white);
-  text-decoration: none;
-  transition: 0.3s;
+  border-bottom: 2px solid transparent;
 }
 
-html,
-body {
-  scroll-behavior: smooth;
+.nav__links a:hover {
+  border-color: var(--white);
 }
 
-body {
-  font-family: "Manrope";
-}
-
-h2 {
-  font-size: 40px;
-}
+/* ==========================================================================
+     5. PAGE HEADERS (hero / banner sections)
+     ========================================================================== */
 
 .header {
   min-height: 800px;
@@ -182,6 +293,34 @@ h2 {
   padding-bottom: 125px;
 }
 
+#about_me__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/gangneung-self.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 175px;
+}
+
+#clients__header {
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/nature/la-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end; /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 175px;
+}
+
 #photography {
   min-height: 600px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -195,25 +334,9 @@ h2 {
   justify-content: center;
 }
 
-.nav__logo img {
-  width: 100px;
-  height: auto;
-  max-width: 100px;
-}
-
-nav {
-  position: fixed;
-  isolation: isolate;
-  top: 0;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: auto;
-  z-index: 9;
-}
-
-nav.hide {
-  transform: translateY(-100%);
-}
+/* ==========================================================================
+     6. HEADER CONTENT / HERO TEXT
+     ========================================================================== */
 
 .header__content {
   display: flex;
@@ -233,21 +356,18 @@ nav.hide {
   font-size: 30px;
 }
 
-.nav__header {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  background-color: var(--text-dark);
+.website__header {
+  font-family: "Noto Serif Display";
 }
 
-.nav__title {
-  font-family: Manrope;
-  color: var(--white);
-  font-size: 25px;
-  font-weight: 100;
+.ri-arrow-down-long-line {
+  padding-top: 2rem;
+  font-size: 2rem;
 }
+
+/* ==========================================================================
+     7. INTRO SECTION
+     ========================================================================== */
 
 .intro {
   display: flex;
@@ -271,6 +391,53 @@ nav.hide {
   padding-right: 5rem;
 }
 
+/* ==========================================================================
+     8. CLIENTS DISPLAY
+     ========================================================================== */
+
+.clients__display {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+  /* gap: 15px; */
+}
+
+.client__tile {
+  position: relative;
+}
+
+.client__tile > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.client__tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* adjust darkness here */
+  z-index: 1;
+}
+
+.client__tile__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 220px;
+}
+
+#client__tile__content__gardens,
+#client__tile__content__chronicle {
+  width: 300px;
+}
+
+/* ==========================================================================
+     9. "ME" SECTION
+     ========================================================================== */
+
 .me {
   display: flex;
   align-items: center;
@@ -293,56 +460,9 @@ nav.hide {
   display: block;
 }
 
-.website__header {
-  font-family: "Noto Serif Display";
-}
-
-.nav__menu__btn {
-  font-size: 1.5rem;
-  color: var(--white);
-  cursor: pointer;
-}
-
-.nav__links {
-  font-family: Manrope;
-  list-style: none;
-  position: absolute;
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: var(--text-dark);
-  transform: translateY(-100%);
-  transition: 0.5s;
-  z-index: -1;
-}
-
-.nav__links.open {
-  transform: translateY(0);
-}
-
-.nav__links .nav__logo {
-  display: none;
-}
-
-.nav__links a {
-  font-family: Manrope;
-  padding-bottom: 5px;
-  font-weight: 600;
-  color: var(--white);
-  border-bottom: 2px solid transparent;
-}
-
-.nav__links a:hover {
-  border-color: var(--white);
-}
-
-.ri-arrow-down-long-line {
-  padding-top: 2rem;
-  font-size: 2rem;
-}
+/* ==========================================================================
+     10. PORTFOLIO GRID / CARDS
+     ========================================================================== */
 
 .portfolio__grid {
   align-items: center;
@@ -400,24 +520,23 @@ nav.hide {
   opacity: 1;
 }
 
-.button {
-  background-color: var(--text-dark);
-  border: none;
-  color: white;
-  padding: 20px 34px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+/* ==========================================================================
+     11. HEADSHOT DEX
+     ========================================================================== */
 
 .headshotdex {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 0rem;
+}
+
+#headshotdex__left {
+  text-align: center;
+}
+
+#headshotdex__left h2 {
+  padding-top: 40px;
 }
 
 .headshotdex__display__image {
@@ -434,6 +553,10 @@ nav.hide {
   height: auto;
   cursor: zoom-in;
 }
+
+/* ==========================================================================
+     12. PHOTO GRID / TILES
+     ========================================================================== */
 
 .photo-grid {
   display: grid;
@@ -484,13 +607,9 @@ nav.hide {
   /* border-color: #012169; */
 }
 
-#headshotdex__left {
-  text-align: center;
-}
-
-#headshotdex__left h2 {
-  padding-top: 40px;
-}
+/* ==========================================================================
+     13. GALLERY (masonry)
+     ========================================================================== */
 
 .gallery {
   columns: 2;
@@ -507,16 +626,16 @@ nav.hide {
   transition: transform 0.3s ease;
 }
 /* 
-.gallery img.zoomed {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  z-index: 1000;
-  cursor: zoom-out;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-} */
+  .gallery img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+    cursor: zoom-out;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  } */
